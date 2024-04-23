@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    <p th:text="#{greetings(${recipientName})}"></p>
+    <p th:text="#{intro}"></p>
+    <p th:text="#{message}"></p>
+    <a th:href="${text}">Click Here</a>
+    <p th:text="#{pass(${key})}"></p>
+    <p th:text="#{regards}" style="font-weight: bold;"></p>
+    <p>
+      <em th:text="#{signature(${senderName})}" style="font-weight: bold;"></em> <br />
+      <img src="cid:attachment.png" style="height: 45px;"/>
+    </p>
+  </body>
+</html>

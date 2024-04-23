@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>AMS | Home</title>
+
+<link rel="icon" type="image/png" th:href="@{/img/favicon.ico}" />
+<!-- Custom fonts for this template-->
+<link th:href="@{/vendor/fontawesome-free/css/all.min.css}"
+	rel="stylesheet" type="text/css">
+<link th:href="@{/css/fonts-google-apis.css}" rel="stylesheet"
+	type="text/css">
+
+<!-- Custom styles for this template-->
+<link th:href="@{/css/sb-admin-2.css}" rel="stylesheet" type="text/css">
+<style>
+.glow {
+	color: #fff;
+	text-align: center;
+	-webkit-animation: glow 1s ease-in-out infinite alternate;
+	-moz-animation: glow 1s ease-in-out infinite alternate;
+	animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {from { text-shadow:005px#fff, 0010px#fff, 0020px#e60073,0030px#e60073, 0040px#e60073, 0050px#e60073, 0060px#e60073;}
+
+to {text-shadow: 0 0 10px #fff, 0 0 20px #ff4da6, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6;}
+}
+</style>
+
+</head>
+
+<body class="">
+	<div class="">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="#"> <img
+				th:src="@{/img/undraw_make_it_rain_iwk4.svg}" width="100"
+				height="30" class="d-inline-block align-top" alt=""> <span
+				class="glow">Aadhar Card Management System</span>
+			</a>
+
+			<div class="form-inline my-2 my-lg-0 ml-auto">
+				<a th:href="@{/login}" class="btn btn-outline-info my-2 my-sm-0">
+					<span class="spinner-grow spinner-grow-sm"></span> Login
+				</a> &nbsp; <a th:href="@{/signupform}"
+					class="btn btn-outline-info my-2 my-sm-0">Sign Up</a>
+			</div>
+
+		</nav>
+	</div>
+
+	<div class="container mt-1">
+
+		<div id="demo" class="carousel slide" data-ride="carousel">
+			<ul class="carousel-indicators">
+				<li data-target="#demo" data-slide-to="0" class="active"></li>
+				<li data-target="#demo" data-slide-to="1"></li>
+				<li data-target="#demo" data-slide-to="2"></li>
+			</ul>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img th:src="@{/img/undraw_online_ad_mg4t.svg}"
+						alt="Aadhar Management System" width="1100" height="500">
+					<div class="carousel-caption">
+						<h3>Aadhar Management System</h3>
+						<p>Create you Aadhar Card Now !!</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img th:src="@{/img/undraw_Credit_card_re_blml.svg}"
+						alt="Share Aadhar Card" width="1100" height="500">
+					<div class="carousel-caption">
+						<h3 class="text-dark">Share Aadhar Card</h3>
+						<p class="text-dark">Easily share generated Card with Customer</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img th:src="@{/img/undraw_revenue_3osh.svg}" alt="Statistics"
+						width="1100" height="500">
+					<div class="carousel-caption">
+						<h3 class="text-dark">Ready Statistics</h3>
+						<p class="text-dark">All Aadhar Card Statistics are now
+							available on Dashboard!</p>
+					</div>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#demo" data-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+			</a> <a class="carousel-control-next" href="#demo" data-slide="next">
+				<span class="carousel-control-next-icon"></span>
+			</a>
+		</div>
+
+	</div>
+
+
+	<!-- Bootstrap core JavaScript-->
+	<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+	<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+	<!-- Core plugin JavaScript-->
+	<script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
+
+	<!-- Custom scripts for all pages-->
+	<script th:src="@{/js/sb-admin-2.min.js}"></script>
+
+</body>
+
+</html>

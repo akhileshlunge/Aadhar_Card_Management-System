@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>AMS | List</title>
+
+<link rel="icon" type="image/png" th:href="@{/img/favicon.ico}" />
+<!-- Custom fonts for this template-->
+<link th:href="@{/vendor/fontawesome-free/css/all.min.css}"
+	rel="stylesheet" type="text/css">
+<link th:href="@{/css/fonts-google-apis.css}" rel="stylesheet"
+	type="text/css">
+<link th:href="@{/vendor/datatables/dataTables.bootstrap4.min.css}"
+	rel="stylesheet" type="text/css">
+
+<!-- Custom styles for this template-->
+<link th:href="@{/css/sb-admin-2.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/custom.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body id="page-top">
+
+	<!-- Page Wrapper -->
+	<div id="wrapper">
+
+		<!--------------------- Sidebar from header.html file --------------------------------->
+		<ul th:replace="owner/header :: header-side"></ul>
+		<!--------------------- End of Sidebar ------------------------------------------------>
+
+		<!-- Content Wrapper -->
+		<div id="content-wrapper" class="d-flex flex-column">
+
+			<!-- Main Content -->
+			<div id="content">
+
+				<!---------------------- Topbar from header.html file ------------------------>
+				<div th:replace="owner/header :: header-top"></div>
+				<!---------------------- End of Topbar --------------------------------------->
+
+				<!---------------------- Begin Page Content ---------------------------------->
+				<div class="container-fluid">
+
+					<!-- Page Heading -->
+					<div
+						class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h1 class="h3 mb-0 text-gray-800">Aadhar Cards</h1>
+						<!-- <a href="#"
+							class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+							class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
+					</div>
+
+					<div class="row">
+
+						<!-- Area Chart -->
+						<div class="col-xl-12 col-lg-12">
+							<div class="card shadow mb-4">
+								<!-- Card Header - Dropdown -->
+
+								<!-- Card Body -->
+								<div class="card-body" style="height: 1000px;">
+									<div class="row">
+
+										<div class="table-responsive">
+											<table class="table table-bordered" id="dataTable" width=""
+												cellspacing="0">
+												<thead>
+													<tr>
+														<th></th>
+														<th>Aadhar No</th>
+														<th>First Name</th>
+														<th>Middle Name</th>
+														<th>Last Name</th>
+														<th>Birthday Date</th>
+														<th>Email</th>
+														<th>Mobile</th>
+														<th>Gender</th>
+														<th>City</th>
+														<th>State</th>
+														<th>Date</th>
+													</tr>
+												</thead>
+
+												<tbody>
+													<tr th:each="aadhar : ${aadharList}">
+														<td><a
+															th:href="@{/owner/downloadimage/{id}(id=${aadhar.id})}"
+															target="_blank" title="Download"><i
+																class="far fa-image"></i></a></td>
+
+														<!-- <td><img th:src="@{/owner/downloadimage/{id}(id=${aadhar.id})}" style="height: 50px; width: 50px;"></td> -->
+														<td><span th:text="${aadhar.aadharNo}"> </span></td>
+														<td><span th:text="${aadhar.firstName}"> </span></td>
+														<td><span th:text="${aadhar.middleName}"> </span></td>
+														<td><span th:text="${aadhar.lastName}"> </span></td>
+														<td><span th:text="${aadhar.dob}"> </span></td>
+														<td><span th:text="${aadhar.email}"> </span></td>
+														<td><span th:text="${aadhar.mobileNo}"> </span></td>
+														<td><span th:text="${aadhar.gender}"> </span></td>
+														<td><span th:text="${aadhar.address.city}"> </span></td>
+														<td><span th:text="${aadhar.address.state}"> </span></td>
+														<td><span th:text="${aadhar.createdDate}"> </span></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+
+
+
+				</div>
+				<!-- /.container-fluid -->
+
+			</div>
+			<!--------------------------- End of Main Content ------------------------------->
+
+			<!---------------------- Footer from header.html file ----------------------->
+			<footer th:replace="owner/header :: header-footer"></footer>
+			<!---------------------- End of Footer -------------------------------------->
+
+		</div>
+		<!-- End of Content Wrapper -->
+
+	</div>
+	<!-- End of Page Wrapper -->
+
+	<!-- Scroll to Top Button-->
+	<a class="scroll-to-top rounded" href="#page-top"> <i
+		class="fas fa-angle-up"></i>
+	</a>
+
+	<!------------ Logout Modal from header.html file --------------------------->
+	<div th:replace="owner/header :: header-logout"></div>
+	<!------------ End Logout Modal from header.html file ----------------------->
+	<!------------ JS from header.html file --------------------------->
+	<div th:replace="owner/header :: header-js"></div>
+	<!------------ End JS from header.html file ----------------------->
+
+</body>
+
+</html>

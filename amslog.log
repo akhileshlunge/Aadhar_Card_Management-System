@@ -1,0 +1,154 @@
+2022-08-14 11:06:34.318  INFO 13028 --- [restartedMain] .a.AadharCardManagementSystemApplication : Starting AadharCardManagementSystemApplication using Java 11.0.13 on WS-16650 with PID 13028 (C:\Harshal_MyData\workspace_spring\AadharCardManagementSystemFinal\target\classes started by haso0821 in C:\Harshal_MyData\workspace_spring\AadharCardManagementSystemFinal)
+2022-08-14 11:06:34.321  INFO 13028 --- [restartedMain] .a.AadharCardManagementSystemApplication : No active profile set, falling back to default profiles: default
+2022-08-14 11:06:38.499  WARN 13028 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-14 11:06:39.562  INFO 13028 --- [restartedMain] .a.AadharCardManagementSystemApplication : Started AadharCardManagementSystemApplication in 5.761 seconds (JVM running for 6.622)
+2022-08-14 11:07:02.627  INFO 13028 --- [http-nio-8080-exec-1] c.aadhar.app.controller.LoginController  : In Login Controller home page
+2022-08-14 11:07:11.908  INFO 13028 --- [http-nio-8080-exec-4] c.aadhar.app.controller.LoginController  : In Login Controller home page
+2022-08-14 11:07:44.794  INFO 13028 --- [http-nio-8080-exec-4] c.aadhar.app.controller.LoginController  : In Login Controller login page
+2022-08-14 11:07:59.262  INFO 13028 --- [http-nio-8080-exec-4] a.a.c.CustomAuthenticationSuccessHandler : User login sucessfully : amsowner@gmail.com
+2022-08-14 11:07:59.474  WARN 13028 --- [http-nio-8080-exec-4] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [204] milliseconds.
+2022-08-14 11:07:59.485  INFO 13028 --- [http-nio-8080-exec-6] c.aadhar.app.controller.OwnerController  : In Owner Controller dashboard 
+2022-08-14 11:08:07.127  INFO 13028 --- [http-nio-8080-exec-7] c.aadhar.app.controller.OwnerController  : In Owner Controller addaadharpage
+2022-08-14 11:08:07.130  INFO 13028 --- [http-nio-8080-exec-7] c.aadhar.app.controller.OwnerController  : In Owner Controller addaadharpage Aadhar No is : 526999117539
+2022-08-14 11:08:32.385  INFO 13028 --- [http-nio-8080-exec-8] c.aadhar.app.controller.OwnerController  : In Owner Controller addaadharpage
+2022-08-14 11:08:32.385  INFO 13028 --- [http-nio-8080-exec-8] c.aadhar.app.controller.OwnerController  : In Owner Controller addaadharpage Aadhar No is : 652552441796
+2022-08-14 11:09:19.244  INFO 13028 --- [http-nio-8080-exec-4] c.aadhar.app.controller.OwnerController  : In Owner Controller addaadharcard Baseurl is : http://localhost:8080
+2022-08-14 11:09:19.468  INFO 13028 --- [http-nio-8080-exec-4] c.aadhar.app.controller.OwnerController  : In Owner Controller addaadharcard Token is 1248e7f7-0add-4f12-8028-d4efe44d2874
+2022-08-14 11:09:19.471  INFO 13028 --- [http-nio-8080-exec-4] c.aadhar.app.controller.OwnerController  : In Owner Controller addaadharcard Email process started with given details 
+2022-08-14 11:09:19.471  INFO 13028 --- [http-nio-8080-exec-4] com.aadhar.app.service.EmailServiceImpl  : In Email Service Thymeleaf Template called
+2022-08-14 11:09:19.473  INFO 13028 --- [http-nio-8080-exec-4] com.aadhar.app.service.EmailServiceImpl  : In Email Service Thymeleaf Template context is : org.thymeleaf.context.Context@4f5a2ee8
+2022-08-14 11:09:19.494  INFO 13028 --- [http-nio-8080-exec-4] com.aadhar.app.service.EmailServiceImpl  : In Email Service Email will sent to harshalsolao@gmail.com and Subject is : Aadhar Management System activation link
+2022-08-14 11:09:19.573  INFO 13028 --- [http-nio-8080-exec-4] com.aadhar.app.service.EmailServiceImpl  : In Email Service Email will sent to harshalsolao@gmail.com and Content is set
+2022-08-14 11:09:21.783 ERROR 13028 --- [http-nio-8080-exec-4] c.aadhar.app.controller.OwnerController  : In Owner Controller with Exception Authentication failed; nested exception is javax.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d19-20020a170902aa9300b0016bea74d11esm4605162plr.267 - gsmtp
+
+
+org.springframework.mail.MailAuthenticationException: Authentication failed; nested exception is javax.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d19-20020a170902aa9300b0016bea74d11esm4605162plr.267 - gsmtp
+
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:440) ~[spring-context-support-5.3.2.jar:5.3.2]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:361) ~[spring-context-support-5.3.2.jar:5.3.2]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:356) ~[spring-context-support-5.3.2.jar:5.3.2]
+	at com.aadhar.app.service.EmailServiceImpl.sendHtmlMessage(EmailServiceImpl.java:72) ~[classes/:na]
+	at com.aadhar.app.service.EmailServiceImpl.sendMessageUsingThymeleafTemplate(EmailServiceImpl.java:61) ~[classes/:na]
+	at com.aadhar.app.controller.OwnerController.addAadharCard(OwnerController.java:134) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1061) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: javax.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d19-20020a170902aa9300b0016bea74d11esm4605162plr.267 - gsmtp
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:947) ~[jakarta.mail-1.6.5.jar:1.6.5]
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:858) ~[jakarta.mail-1.6.5.jar:1.6.5]
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:762) ~[jakarta.mail-1.6.5.jar:1.6.5]
+	at javax.mail.Service.connect(Service.java:342) ~[jakarta.mail-1.6.5.jar:1.6.5]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:518) ~[spring-context-support-5.3.2.jar:5.3.2]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:437) ~[spring-context-support-5.3.2.jar:5.3.2]
+	... 93 common frames omitted
+
+2022-08-14 11:09:21.804  INFO 13028 --- [http-nio-8080-exec-4] c.aadhar.app.controller.OwnerController  : In Owner Controller addaadharpage
+2022-08-14 11:09:21.804  INFO 13028 --- [http-nio-8080-exec-4] c.aadhar.app.controller.OwnerController  : In Owner Controller addaadharpage Aadhar No is : 553043908884
+2022-08-14 11:09:32.291  INFO 13028 --- [http-nio-8080-exec-7] c.aadhar.app.controller.OwnerController  : In Owner Controller aadharlist 
+2022-08-14 11:09:36.321  INFO 13028 --- [http-nio-8080-exec-8] c.aadhar.app.controller.OwnerController  : In Owner Controller aadharlist 
+2022-08-14 11:22:25.399  WARN 13028 --- [SpringContextShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2022-08-14 14:09:48.479  INFO 17548 --- [main] dharCardManagementSystemApplicationTests : Starting AadharCardManagementSystemApplicationTests using Java 1.8.0_333 on LAPTOP-ANJALI with PID 17548 (started by ANJALI in D:\Harshal\workspaces\spring_ws\aadhar-card-management-system)
+2022-08-14 14:09:48.486  INFO 17548 --- [main] dharCardManagementSystemApplicationTests : No active profile set, falling back to default profiles: default
+2022-08-14 14:09:51.425  WARN 17548 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-14 14:09:52.609  INFO 17548 --- [main] dharCardManagementSystemApplicationTests : Started AadharCardManagementSystemApplicationTests in 4.362 seconds (JVM running for 5.076)
+2022-08-14 14:10:26.046  INFO 7828 --- [restartedMain] .a.AadharCardManagementSystemApplication : Starting AadharCardManagementSystemApplication using Java 1.8.0_333 on LAPTOP-ANJALI with PID 7828 (D:\Harshal\workspaces\spring_ws\aadhar-card-management-system\target\classes started by ANJALI in D:\Harshal\workspaces\spring_ws\aadhar-card-management-system)
+2022-08-14 14:10:26.048  INFO 7828 --- [restartedMain] .a.AadharCardManagementSystemApplication : No active profile set, falling back to default profiles: default
+2022-08-14 14:10:29.178  WARN 7828 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-14 14:10:30.178  INFO 7828 --- [restartedMain] .a.AadharCardManagementSystemApplication : Started AadharCardManagementSystemApplication in 4.442 seconds (JVM running for 4.835)
+2022-08-14 14:10:39.873  INFO 7828 --- [http-nio-8080-exec-1] c.aadhar.app.controller.LoginController  : In Login Controller home page
+2022-08-14 14:10:44.108  INFO 7828 --- [http-nio-8080-exec-3] c.aadhar.app.controller.LoginController  : In Login Controller home page
+2022-08-14 14:12:48.838  INFO 7828 --- [http-nio-8080-exec-3] c.aadhar.app.controller.LoginController  : In Login Controller login page
+2022-08-14 14:13:02.942  INFO 7828 --- [http-nio-8080-exec-3] a.a.c.CustomAuthenticationSuccessHandler : User login sucessfully : amsowner@gmail.com
+2022-08-14 14:13:02.958  INFO 7828 --- [http-nio-8080-exec-6] c.aadhar.app.controller.OwnerController  : In Owner Controller dashboard 
+2022-08-14 14:13:05.309  INFO 7828 --- [http-nio-8080-exec-2] c.aadhar.app.controller.OwnerController  : In Owner Controller aadharlist 
+2022-08-14 14:13:06.820  INFO 7828 --- [http-nio-8080-exec-10] c.aadhar.app.controller.OwnerController  : In Owner Controller aadharlist 
+2022-08-14 14:13:17.069  INFO 7828 --- [http-nio-8080-exec-5] c.aadhar.app.controller.LoginController  : In Login Controller login page

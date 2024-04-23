@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body>
+	<div>
+		<!---------------------------------th:fragment="header-side"------------------------------->
+		<ul
+			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+			id="accordionSidebar" th:fragment="header-side">
+
+			<!-- Sidebar - Brand -->
+			<a
+				class="sidebar-brand d-flex align-items-center justify-content-center"
+				href="#">
+				<div class="sidebar-brand-icon">
+					<img alt="" th:src="@{/img/aadhar-logo.png}" width="100px;"
+						title="Aadhar Management System"
+						style="border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 100px;">
+				</div> <!-- <div class="sidebar-brand-text mx-3"><span th:text="${session.user.displayName}"></span></div> -->
+			</a>
+
+			<!-- Divider -->
+			<hr class="sidebar-divider my-0">
+
+			<!-- Nav Item - Dashboard -->
+			<li id="dash" class="nav-item"><a class="nav-link"
+				th:href="@{/owner/dashboard}"> <i
+					class="fas fa-fw fa-tachometer-alt"></i> <span>AMS Dashboard</span></a>
+			</li>
+
+			<!-- Divider -->
+			<hr class="sidebar-divider">
+
+			<!-- Heading -->
+			<div class="sidebar-heading">Aadhar Card</div>
+
+			<!-- Nav Item - Pages Collapse Menu -->
+			<li id="agency1" class="nav-item"><a class="nav-link collapsed"
+				href="#" data-toggle="collapse" data-target="#collapseTwo"
+				aria-expanded="true" aria-controls="collapseTwo"> <i
+					class="fas fa-fw fa-cog"></i> <span>Manage Aadhar</span>
+			</a>
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+					data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<!-- <h6 class="collapse-header">Custom Components:</h6> -->
+						<a id="agency11" class="collapse-item"
+							th:href="@{/owner/addaadharpage}"><i
+							class="fas fa-fw fa-plus-circle"></i> <span>Add</span></a> <a
+							id="agency12" class="collapse-item"
+							th:href="@{/owner/updateaadharpage}"><i
+							class="fas fa-fw fa-pen-square"></i> <span>Update</span></a> <a
+							id="agency13" class="collapse-item"
+							th:href="@{/owner/deleteaadharpage}"><i
+							class="fas fa-fw fa-trash"></i> <span>Delete</span></a>
+					</div>
+				</div></li>
+
+
+			<!-- Nav Item - List Agency -->
+			<li id="agencylist" class="nav-item"><a class="nav-link"
+				th:href="@{/owner/aadharlist}"> <i class="fas fa-list-alt"></i>
+					<span>Aadhar Cards</span></a></li>
+
+
+			<!-- Divider -->
+			<hr class="sidebar-divider">
+
+			<!-- Heading -->
+			<div class="sidebar-heading">Card Holders [User]</div>
+
+			<!-- Nav Item - Transaction Collapse Menu -->
+			<!-- <li id="trans1" class="nav-item"><a class="nav-link collapsed"
+				href="#" data-toggle="collapse" data-target="#collapsePages"
+				aria-expanded="true" aria-controls="collapsePages"> <i
+					class="fas fa-fw fa-edit"></i> <span>Manage Users</span>
+			</a>
+				<div id="collapsePages" class="collapse"
+					aria-labelledby="headingPages" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<h6 class="collapse-header">Login Screens:</h6>
+						<h6 class="collapse-header">Custom Components:</h6>
+						<a id="trans11" class="collapse-item" th:href="@{/user/adduser}"><i
+							class="fas fa-fw fa-plus-circle"></i> <span>Add</span></a> <a
+							id="trans12" class="collapse-item" th:href="@{/user/updateuser}"><i
+							class="fas fa-fw fa-pen-square"></i> <span>Update</span></a> <a
+							id="trans13" class="collapse-item" th:href="@{/user/deleteuser}"><i
+							class="fas fa-fw fa-trash"></i> <span>Delete</span></a>
+
+					</div>
+				</div></li> -->
+
+			<!-- Nav Item - Charts -->
+			<li class="nav-item"><a class="nav-link" href="#"> <i
+					class="fas fa-fw fa-layer-group"></i> <span>Aadhar Users</span></a></li>
+
+			<!-- Divider -->
+			<hr class="sidebar-divider d-none d-md-block">
+			<li class="nav-item"><a class="nav-link" href="#"
+				data-toggle="modal" data-target="#logoutModal"> <i
+					class="fas fa-sign-out-alt fa-fw"></i><span>Logout</span></a></li>
+
+			<!-- Divider -->
+			<hr class="sidebar-divider d-none d-md-block">
+
+			<!-- Sidebar Toggler (Sidebar) -->
+			<div class="text-center d-none d-md-inline">
+				<button class="rounded-circle border-0" id="sidebarToggle"></button>
+			</div>
+
+		</ul>
+	</div>
+
+
+	<!---------------------------------th:fragment="header-top"------------------------------->
+
+	<div th:fragment="header-top">
+		<nav
+			class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+			<!-- Sidebar Toggle (Topbar) -->
+			<button id="sidebarToggleTop"
+				class="btn btn-link d-md-none rounded-circle mr-3">
+				<i class="fa fa-bars"></i>
+			</button>
+
+			<!-- Topbar Search -->
+			<!-- <form
+				class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+				<div class="input-group">
+					<input type="text" class="form-control bg-light border-0 small"
+						placeholder="Search for..." aria-label="Search"
+						aria-describedby="basic-addon2">
+					<div class="input-group-append">
+						<button class="btn btn-primary" type="button">
+							<i class="fas fa-search fa-sm"></i>
+						</button>
+					</div>
+				</div>
+			</form> -->
+			<span class="glow">Aadhar Card Management System</span>
+
+			<!-- Topbar Navbar -->
+			<ul class="navbar-nav ml-auto">
+
+				<!-- Nav Item - Search Dropdown (Visible Only XS) -->
+				<li class="nav-item dropdown no-arrow d-sm-none"><a
+					class="nav-link dropdown-toggle" href="#" id="searchDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <i class="fas fa-search fa-fw"></i>
+				</a> <!-- Dropdown - Messages -->
+					<div
+						class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+						aria-labelledby="searchDropdown">
+						<form class="form-inline mr-auto w-100 navbar-search">
+							<div class="input-group">
+								<input type="text" class="form-control bg-light border-0 small"
+									placeholder="Search for..." aria-label="Search"
+									aria-describedby="basic-addon2">
+								<div class="input-group-append">
+									<button class="btn btn-primary" type="button">
+										<i class="fas fa-search fa-sm"></i>
+									</button>
+								</div>
+							</div>
+						</form>
+					</div></li>
+
+				<div class="topbar-divider d-none d-sm-block"></div>
+
+				<!-- Nav Item - User Information -->
+				<li class="nav-item dropdown no-arrow"><a
+					class="nav-link dropdown-toggle" href="#" id="userDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <span
+						class="mr-2 d-none d-lg-inline text-gray-600 small"
+						th:text="${session.user.firstName} +' '+ ${session.user.lastName}"></span>
+						<img class="img-profile rounded-circle"
+						th:src="@{/img/undraw_profile_pic_ic5t.svg}">
+				</a> <!-- Dropdown - User Information -->
+					<div
+						class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+						aria-labelledby="userDropdown">
+						<a class="dropdown-item" href="#"> <i
+							class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> <span
+							th:text="${session.user.displayName}"></a> <a
+							class="dropdown-item" href="#" data-target="#qrcodeModal"
+							data-toggle="modal"> <i
+							class="fas fa-qrcode fa-sm fa-fw mr-2 text-gray-400"></i> QR Code
+						</a> <a class="dropdown-item" href="#" data-target="#passChange" data-toggle="modal"> <i
+							class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Change
+							Password
+						</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#" data-toggle="modal"
+							data-target="#logoutModal"> <i
+							class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+							Logout
+						</a>
+					</div></li>
+
+			</ul>
+
+		</nav>
+	</div>
+
+	<!---------------------------------th:fragment="header-footer"------------------------------->
+	<footer class="sticky-footer bg-white" th:fragment="header-footer">
+		<div class="container my-auto">
+			<div class="copyright text-center my-auto">
+				<span>Copyright &copy; Aadhar Management System 2020</span>
+			</div>
+		</div>
+	</footer>
+
+
+	<!---------------------------------th:fragment="header-logout"------------------------------->
+	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true"
+		th:fragment="header-logout">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+					<button class="close" type="button" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">Select "Logout" below if you are ready
+					to end your current session.</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" type="button"
+						data-dismiss="modal">Cancel</button>
+					<form th:action="@{/logout}" method="POST">
+						<button class="btn btn-danger" type="submit">Logout</button>
+					</form>
+					<!-- <a class="btn btn-primary" href="login.html">Logout</a> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="qrcodeModal" tabindex="-1" role="dialog"
+		aria-labelledby="qrcodeModalLabel" aria-hidden="true"
+		th:fragment="header-logout">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="qrcodeModalLabel">Scan code with
+						Authenticator App?</h5>
+					<button class="close" type="button" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">X</span>
+					</button>
+				</div>
+				<div class="modal-body" style="text-align: center;">
+					<img alt="QR Not available use below code"
+						th:src="${session.user.secretCode}">
+					<h2 th:text="${session.secretKey}"
+						title="Enter key if QR Code not available."></h2>
+				</div>
+				<div class="modal-footer">
+					<div class="custom-control custom-switch custom-switch-lg">
+						<input type="hidden" id="userId" th:value="${session.user.id}">
+						<input type="checkbox" class="custom-control-input" id="mySwitch1"
+							th:checked="${session.user.twoFactorAuth}"> <label
+							class="custom-control-label" for="mySwitch1"> Toggle to
+							Enable/Disable </label>
+					</div>
+
+					<button class="btn btn-secondary" type="button"
+						data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="passChange" tabindex="-1" role="dialog"
+		aria-labelledby="passChangeModalLabel" aria-hidden="true"
+		th:fragment="header-logout">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="passChangeModalLabel">Change
+						Password !</h5>
+					<button class="close" type="button" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">X</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="formGroupExampleInput">Password : </label> <input
+							type="password" class="form-control" id="passInput1">
+					</div>
+					<div class="form-group">
+						<label for="formGroupExampleInput2">Confirm Password : </label> <input
+							type="password" class="form-control" id="passInput2">
+					</div>
+					<div class="form-group">
+						<label id="changemsg" class="text-info"></label>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" type="button"
+						data-dismiss="modal">Cancel</button>
+
+					<button id="btnChange" class="btn btn-danger" type="button">Submit</button>
+
+					<!-- <a class="btn btn-primary" href="login.html">Logout</a> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!---------------------------------th:fragment="header-js"------------------------------->
+	<div th:fragment="header-js">
+		<!-- Bootstrap core JavaScript-->
+		<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+		<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+		<!-- Core plugin JavaScript-->
+		<script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
+		<script th:src="@{/vendor/datatables/jquery.dataTables.min.js}"></script>
+		<script th:src="@{/vendor/datatables/dataTables.bootstrap4.min.js}"></script>
+
+		<!-- Custom scripts for all pages-->
+		<script th:src="@{/js/sb-admin-2.js}"></script>
+		<script th:src="@{/js/dashboard-menu.js}"></script>
+		<!-- Page level plugins -->
+		<script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
+
+		<!-- Page level custom scripts -->
+		<script th:src="@{/js/demo/chart-area-demo.js}"></script>
+		<script th:src="@{/js/demo/chart-pie-demo.js}"></script>
+		<script th:src="@{/js/demo/datatables-demo.js}"></script>
+		<script th:src="@{/js/custom.js}"></script>
+	</div>
+
+</body>
+</html>

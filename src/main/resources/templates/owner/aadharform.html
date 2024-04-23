@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>AMS | Add</title>
+
+<link rel="icon" type="image/png" th:href="@{/img/favicon.ico}" />
+<!-- Custom fonts for this template-->
+<link th:href="@{/vendor/fontawesome-free/css/all.min.css}"
+	rel="stylesheet" type="text/css">
+<link th:href="@{/css/fonts-google-apis.css}" rel="stylesheet"
+	type="text/css">
+
+<!-- Custom styles for this template-->
+<link th:href="@{/css/sb-admin-2.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/custom.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body id="page-top">
+
+	<!-- Page Wrapper -->
+	<div id="wrapper">
+
+		<!--------------------- Sidebar from header.html file --------------------------------->
+		<ul th:replace="owner/header :: header-side"></ul>
+		<!--------------------- End of Sidebar ------------------------------------------------>
+
+		<!-- Content Wrapper -->
+		<div id="content-wrapper" class="d-flex flex-column">
+
+			<!-- Main Content -->
+			<div id="content">
+
+				<!---------------------- Topbar from header.html file ------------------------>
+				<div th:replace="owner/header :: header-top"></div>
+				<!---------------------- End of Topbar --------------------------------------->
+
+				<!---------------------- Begin Page Content ---------------------------------->
+				<div class="container-fluid">
+
+					<!-- Page Heading -->
+					<div
+						class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h1 class="h3 mb-0 text-gray-800">Manage Aadhar</h1>
+						<!-- <a href="#"
+							class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+							class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
+					</div>
+
+					<!-- Content Row -->
+					<div th:if="${param.success}">
+						<div class="row">
+							<div
+								class="alert alert-success alert-dismissible fade show col-xl-12 col-lg-12">
+								<button type="button" class="close" data-dismiss="alert">&times;</button>
+								<strong>Success!</strong> Aadhar Card generated Successfully.
+							</div>
+						</div>
+					</div>
+					<div th:if="${param.error}">
+						<div class="row">
+							<div
+								class="alert alert-danger alert-dismissible fade show col-xl-12 col-lg-12">
+								<button type="button" class="close" data-dismiss="alert">&times;</button>
+								<strong>Failed!</strong> Aadhar Card not generated.
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+
+						<!-- Area Chart -->
+						<div class="col-xl-12 col-lg-12">
+							<div class="card shadow mb-4">
+								<!-- Card Header - Dropdown -->
+								<div
+									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold text-primary">ADD AADHAR
+										CARD</h6>
+									<div class="dropdown no-arrow">
+										<a class="dropdown-toggle" href="#" role="button"
+											id="dropdownMenuLink" data-toggle="dropdown"
+											aria-haspopup="true" aria-expanded="false"> <i
+											class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+										</a>
+										<div
+											class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+											aria-labelledby="dropdownMenuLink">
+											<div class="dropdown-header">Dropdown Header:</div>
+											<a class="dropdown-item" href="#">Action</a> <a
+												class="dropdown-item" href="#">Another action</a>
+											<div class="dropdown-divider"></div>
+											<a class="dropdown-item" href="#">Something else here</a>
+										</div>
+									</div>
+								</div>
+								<!-- Card Body -->
+								<div class="card-body" style="height: 800px;">
+									<div class="row">
+										<div class="agency-form">
+											<form th:action="@{/owner/addaadharcard}"
+												th:object="${theAadhar}" method="post"
+												enctype="multipart/form-data">
+												<div class="form-row">
+													<div class="form-group col-md-6">
+														<label for="inputPassword4">Aadhar Card Number
+															[Auto generated]</label> <input type="text"
+															th:field="*{aadharNo}" class="form-control" id="aadharNo"
+															readonly="readonly">
+													</div>
+													<div class="form-group col-md-2"></div>
+													<div class="form-group col-md-4">
+
+														<img id="blah" th:src="@{/img/undraw_moments_0y20.svg}" alt="Your image"
+															style="width:120px; height:100px; background-color: white; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+													</div>
+												</div>
+												<br>
+												<div class="form-row">
+													<div class="form-group col-md-4">
+														<label for="inputPassword4">First Name</label> <input
+															type="text" th:field="*{firstName}" class="form-control"
+															id="firstName" placeholder="Your name">
+													</div>
+													<div class="form-group col-md-4">
+														<label for="inputPassword4">Middle Name</label> <input
+															type="text" th:field="*{middleName}" class="form-control"
+															id="middleName" placeholder="Father name">
+													</div>
+													<div class="form-group col-md-4">
+														<label for="inputPassword4">Last Name</label> <input
+															type="text" th:field="*{lastName}" class="form-control"
+															id="lastName" placeholder="Your surname">
+													</div>
+
+												</div>
+												<div class="form-row">
+													<div class="form-group col-md-4">
+														<label for="inputEmail4">Email</label> <input type="email"
+															th:field="*{email}" class="form-control" id="email"
+															placeholder="Email address">
+													</div>
+													<div class="form-group col-md-4">
+														<label for="inputContact">Mobile</label> <input
+															type="number" th:field="*{mobileNo}" class="form-control"
+															id="mobileNo" placeholder="Contact No">
+													</div>
+													<div class="form-group col-md-4">
+														<label for="inputContact">Gender</label> <select
+															th:field="*{gender}" id="gender" class="form-control">
+															<option value="" selected>Choose...</option>
+															<option value="Female">Female</option>
+															<option value="Male">Male</option>
+															<option value="Transwomen">Trans Women</option>
+														</select>
+													</div>
+												</div>
+
+												<div class="form-row">
+													<div class="form-group col-md-4">
+														<label for="inputEmail4">Date of birth</label> <input
+															type="date" th:field="*{dob}" class="form-control"
+															id="dob" placeholder="Date of birth">
+													</div>
+													<div class="form-group col-md-8">
+														<label for="inputEmail4">Select Image</label> <input
+															type="file" name="photo" class="form-control-file"
+															id="photo" onchange="readURL(this);">
+													</div>
+
+												</div>
+												<br>
+												<fieldset class="border p-2">
+													<legend class="w-auto">Your Address</legend>
+
+													<div class="form-row">
+														<div class="form-group col-md-4">
+															<label for="inputShopNo">House/Flat No</label> <input
+																type="text" th:field="*{address.houseNo}"
+																class="form-control" id="houseNo">
+														</div>
+														<div class="form-group col-md-4">
+															<label for="inputApt">Street / Area</label> <input
+																th:field="*{address.street}" type="text"
+																class="form-control" id="street"
+																placeholder="1234 Main St">
+														</div>
+														<div class="form-group col-md-4">
+															<label for="inputCity">City</label> <input type="text"
+																th:field="*{address.city}" class="form-control"
+																id="city">
+														</div>
+													</div>
+													<div class="form-row">
+
+														<div class="form-group col-md-5">
+															<label for="inputState">State</label> <select
+																th:field="*{address.state}" id="inputState"
+																class="form-control">
+																<option value="" selected>Choose...</option>
+																<option value="MH">Maharashtra</option>
+																<option value="CN">Canada</option>
+															</select>
+														</div>
+														<div class="form-group col-md-4">
+															<label for="inputCountry">Country</label> <select
+																th:field="*{address.country}" id="inputState"
+																class="form-control">
+																<option value="" selected>Choose...</option>
+																<option value="India">India</option>
+																<option value="USA">USA</option>
+															</select>
+														</div>
+
+														<div class="form-group col-md-3">
+															<label for="inputZip">Zip</label> <input type="text"
+																th:field="*{address.pin}" class="form-control"
+																id="inputZip">
+														</div>
+													</div>
+												</fieldset>
+												<br>
+												<br>
+												<button type="submit" class="btn btn-primary">Submit</button>
+												<button type="reset" class="btn btn-danger">Clear</button>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+
+
+
+				</div>
+				<!-- /.container-fluid -->
+
+			</div>
+			<!--------------------------- End of Main Content ------------------------------->
+
+			<!---------------------- Footer from header.html file ----------------------->
+			<footer th:replace="owner/header :: header-footer"></footer>
+			<!---------------------- End of Footer -------------------------------------->
+
+		</div>
+		<!-- End of Content Wrapper -->
+
+	</div>
+	<!-- End of Page Wrapper -->
+
+	<!-- Scroll to Top Button-->
+	<a class="scroll-to-top rounded" href="#page-top"> <i
+		class="fas fa-angle-up"></i>
+	</a>
+
+	<!------------ Logout Modal from header.html file --------------------------->
+	<div th:replace="owner/header :: header-logout"></div>
+	<!------------ End Logout Modal from header.html file ----------------------->
+
+	<!------------ JS from header.html file --------------------------->
+	<div th:replace="owner/header :: header-js"></div>
+	<!------------ End JS from header.html file ----------------------->
+	
+</body>
+
+</html>
